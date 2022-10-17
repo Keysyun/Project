@@ -16,7 +16,7 @@ const App = () => (
       <Sider />
       <Layout
         style={{
-          padding: '0 24px 24px',
+          padding: '15px',
         }}
       >
         <Content />

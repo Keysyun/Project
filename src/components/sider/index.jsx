@@ -1,23 +1,39 @@
 import React from 'react'
 import { Menu } from 'antd';
+import { useNavigate } from 'react-router-dom'
 
-const items1 = ['1', '2', '3'].map((key) => ({
-  key,
-  label: `nav ${key}`,
-}));
+const MenuData = [
+  {
+    key: 'home',
+    label: '首页'
+  },
+  {
+    key: 'work',
+    label: '工作',
+  },
+  {
+    key: 'profile',
+    label: '个人中心'
+  }
+]
 
 function Sider() {
+  const Navigate = useNavigate()
+  const handleClick = (e) => {
+    Navigate(e.key)
+  }
+
   return (
     <div style={{ width: 200, height: '100%' }} className="site-layout-background">
       <Menu
         mode="inline"
-        defaultSelectedKeys={['1']}
-        defaultOpenKeys={['sub1']}
+        defaultSelectedKeys={['home']}
         style={{
           height: '100%',
           borderRight: 0,
         }}
-        items={items1}
+        items={MenuData}
+        onClick={e => { handleClick(e) }}
       />
     </div>
   )
