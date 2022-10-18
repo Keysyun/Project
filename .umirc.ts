@@ -7,8 +7,19 @@ export default defineConfig({
   locale: { antd: true },
   routes: [
     { path: '/', redirect: '/home' },
-    { path: '/home', component: '@/pages/Home' },
-    { path: '/products', component: '@/pages/Products' },
+    {
+      path: '/app',
+      component: '@/layouts',
+      routes: [
+        {
+          path: '/home',
+          component: '@/pages/Home',
+        },
+      ],
+    },
+    {
+      component: '@/pages/NotFound',
+    },
   ],
   fastRefresh: {},
 });

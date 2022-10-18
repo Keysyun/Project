@@ -1,9 +1,10 @@
 import styles from './index.less';
 
-export default function IndexPage() {
+const Home: React.FC = () => {
   return (
     <div>
       <h1 className={styles.title}>Page index</h1>
     </div>
   );
-}
+};
+export default Home;
