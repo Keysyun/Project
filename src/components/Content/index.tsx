@@ -1,10 +1,7 @@
+import styles from './index.less';
+
 const Content: React.FC = ({ children }) => {
-  return (
-    <div>
-      <h1>Content</h1>
-      {children}
-    </div>
-  );
+  return <div className={styles.content}>{children}</div>;
 };
 
 export default Content;

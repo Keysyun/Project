@@ -1,4 +1,5 @@
 import { Menu } from 'antd';
+import styles from './index.less';
 
 const Header: React.FC = () => {
   const items1 = ['1', '2', '3'].map((key) => ({
@@ -8,8 +9,9 @@ const Header: React.FC = () => {
 
   return (
     <>
-      <div className="logo" />
+      <div className={styles.logo} />
       <Menu
+        style={{ marginLeft: 200 }}
         theme="dark"
         mode="horizontal"
         defaultSelectedKeys={['2']}
