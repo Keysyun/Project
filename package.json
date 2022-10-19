@@ -24,11 +24,13 @@
     "@antv/xflow": "^1.0.51",
     "dayjs": "^1.11.5",
     "react": "17.x",
+    "react-cookies": "^0.1.1",
     "react-dom": "17.x",
     "umi": "^3.5.34"
   },
   "devDependencies": {
     "@types/react": "^17.0.0",
+    "@types/react-cookies": "^0.1.0",
     "@types/react-dom": "^17.0.0",
     "@umijs/preset-react": "1.x",
     "@umijs/test": "^3.5.34",

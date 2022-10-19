@@ -1,9 +1,10 @@
 import { Button, Form, Input, message, Spin } from 'antd';
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import styles from './index.modules.less';
 import { queryProductList } from '@/services/product';
 import { setStorageItems } from '@/utils/storegeTools';
 import { history } from 'umi';
+import Cookies from 'react-cookies';
 
 const Login: React.FC = () => {
   const [loading, setLoading] = useState(false);
@@ -12,20 +13,15 @@ const Login: React.FC = () => {
     if (values.username == 'admin' && values.password == 'admin') {
       setLoading(true);
       queryProductList().then((res) => {
-        console.log(res);
+        Cookies.save('isLogin', true);
         setStorageItems('MENU_DATA', res);
         setLoading(false);
         history.push('/home');
         message.success('登录成功！');
       });
     } else {
-      console.log('点击');
       message.error('密码错误！');
     }
-  };
-
-  const onFinishFailed = (errorInfo: any) => {
-    console.log('Failed:', errorInfo);
   };
 
   return (
@@ -38,7 +34,6 @@ const Login: React.FC = () => {
             wrapperCol={{ span: 16 }}
             initialValues={{ remember: true }}
             onFinish={onFinish}
-            onFinishFailed={onFinishFailed}
             autoComplete="off"
           >
             <Form.Item
