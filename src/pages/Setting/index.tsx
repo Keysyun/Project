@@ -1,5 +1,3 @@
-import React from 'react';
-
 const Time: React.FC = () => {
   return (
     <div>
@@ -7,5 +5,4 @@ const Time: React.FC = () => {
     </div>
   );
 };
-
 export default Time;

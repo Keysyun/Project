@@ -22,6 +22,10 @@ export default defineConfig({
           path: '/time',
           component: '@/pages/Time',
         },
+        {
+          path: '/study',
+          component: '@/pages/Study',
+        },
       ],
     },
     {
