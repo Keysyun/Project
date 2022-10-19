@@ -8,16 +8,31 @@ export function queryProductList() {
     setTimeout(() => {
       resolve([
         {
-          key: 1,
+          key: 'home',
           label: '首页',
+          path: 'home',
         },
         {
-          key: 2,
+          key: 'work',
           label: '工作',
+          path: 'work',
+          children: [
+            {
+              key: 'time',
+              label: '时间',
+              path: 'time',
+            },
+            {
+              key: 'study',
+              label: '学习',
+              path: 'study',
+            },
+          ],
         },
         {
-          key: 3,
+          key: 'profile',
           label: '个人中心',
+          path: 'profile',
         },
       ]);
     }, 2000);

@@ -7,12 +7,20 @@ export default defineConfig({
   routes: [
     { path: '/', redirect: '/home' },
     {
+      path: '/login',
+      component: '@/pages/Login',
+    },
+    {
       path: '/',
       component: '@/layouts',
       routes: [
         {
           path: '/home',
           component: '@/pages/Home',
+        },
+        {
+          path: '/time',
+          component: '@/pages/Time',
         },
       ],
     },

@@ -1,4 +1,4 @@
-import styles from './index.less';
+import styles from './index.modules.less';
 
 const Home: React.FC = () => {
   return (

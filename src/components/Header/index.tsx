@@ -1,22 +1,28 @@
-import { Menu } from 'antd';
-import styles from './index.less';
+import { PageHeader } from 'antd';
+import styles from './index.modules.less';
 
 const Header: React.FC = () => {
-  const items1 = ['1', '2', '3'].map((key) => ({
-    key,
-    label: `nav ${key}`,
-  }));
-
   return (
     <>
-      <div className={styles.logo} />
-      <Menu
-        style={{ marginLeft: 200 }}
-        theme="dark"
-        mode="horizontal"
-        defaultSelectedKeys={['2']}
-        items={items1}
-      />
+      <div>
+        <div className={styles.logo} />
+        <PageHeader
+          className={styles.PageHeader}
+          onBack={() => null}
+          title="Title"
+          subTitle="This is a subtitle"
+        >
+          <div>
+            <button
+              onClick={() => {
+                location.replace('/login');
+              }}
+            >
+              退出登录
+            </button>
+          </div>
+        </PageHeader>
+      </div>
     </>
   );
 };

@@ -1,15 +1,12 @@
 import { Menu } from 'antd';
-import { queryProductList } from '@/services/product';
+import { getStorageItems } from '@/utils/storegeTools';
+import { history } from 'umi';
 
 const Sider: React.FC = () => {
-  const MenuData = async () => {
-    return await queryProductList();
+  const pathTo = (event: any) => {
+    history.push(event.key);
   };
-  console.log(
-    MenuData().then((res) => {
-      console.log(res);
-    }),
-  );
+
   return (
     <>
       <div style={{ width: 200 }}>
@@ -17,12 +14,8 @@ const Sider: React.FC = () => {
           mode="inline"
           defaultSelectedKeys={['1']}
           style={{ height: '100%', borderRight: 0 }}
-          items={[
-            {
-              key: '1',
-              label: '首页',
-            },
-          ]}
+          items={getStorageItems('MENU_DATA')}
+          onClick={(event) => pathTo(event)}
         />
       </div>
     </>
