@@ -1,11 +1,18 @@
 import { Menu } from 'antd';
 import { getStorageItems } from '@/utils/storegeTools';
 import { history } from 'umi';
+import { getMenuData } from '@/services/api';
 
 const Sider: React.FC = () => {
   const pathTo = (event: any) => {
     history.push(event.key);
   };
+
+  console.log(
+    getMenuData({ page: 1, mod: 'mod' }).then((res) => {
+      console.log(res);
+    }),
+  );
 
   return (
     <>

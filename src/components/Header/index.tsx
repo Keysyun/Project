@@ -13,12 +13,11 @@ const Header: React.FC = () => {
           className={styles.PageHeader}
           onBack={() => history.goBack()}
           title={Title}
-          subTitle="This is a subtitle"
         >
           <div>
             <button
               onClick={() => {
-                Cookies.remove('isLogin');
+                Cookies.remove('isLogin', { path: '/' });
                 location.replace('/login');
               }}
             >

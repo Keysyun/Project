@@ -35,6 +35,6 @@ export function queryProductList() {
           path: 'profile',
         },
       ]);
-    }, 2000);
+    }, 1000);
   });
 }

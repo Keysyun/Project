@@ -1,10 +1,11 @@
 import { Button, Form, Input, message, Spin } from 'antd';
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import styles from './index.modules.less';
 import { queryProductList } from '@/services/product';
 import { setStorageItems } from '@/utils/storegeTools';
 import { history } from 'umi';
 import Cookies from 'react-cookies';
+import axios from 'axios';
 
 const Login: React.FC = () => {
   const [loading, setLoading] = useState(false);
@@ -13,7 +14,7 @@ const Login: React.FC = () => {
     if (values.username == 'admin' && values.password == 'admin') {
       setLoading(true);
       queryProductList().then((res) => {
-        Cookies.save('isLogin', true);
+        Cookies.save('isLogin', 'true', { path: '/' });
         setStorageItems('MENU_DATA', res);
         setLoading(false);
         history.push('/home');
